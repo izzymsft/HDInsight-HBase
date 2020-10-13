@@ -1,0 +1,57 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "type": "string"
+        },
+        "virtualNetworkName": {
+            "type": "string"
+        },
+        "addressSpaces": {
+            "type": "array"
+        },
+        "ddosProtectionPlanEnabled": {
+            "type": "bool"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "name": "[parameters('virtualNetworkName')]",
+            "type": "Microsoft.Network/VirtualNetworks",
+            "apiVersion": "2019-09-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [],
+            "tags": {
+                "cluster": "hdi"
+            },
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": "[parameters('addressSpaces')]"
+                },
+                "subnets": [
+                    {
+                        "name": "hdi",
+                        "properties": {
+                            "addressPrefix": "10.250.0.0/20"
+                        }
+                    },
+                    {
+                        "name": "bastion",
+                        "properties": {
+                            "addressPrefix": "10.250.16.0/20"
+                        }
+                    },
+                    {
+                        "name": "datastores",
+                        "properties": {
+                            "addressPrefix": "10.250.32.0/20"
+                        }
+                    }
+                ],
+                "enableDdosProtection": "[parameters('ddosProtectionPlanEnabled')]"
+            }
+        }
+    ]
+}
