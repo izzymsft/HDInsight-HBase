@@ -1,0 +1,84 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "86d61f02-2fcf-4a37-bb6e-cc2c2db9f67d"
+        },
+        "resourceGroupName": {
+            "value": "elephant"
+        },
+        "virtualNetworkName": {
+            "value": "dolphin"
+        },
+        "subnetName": {
+            "value": "hdi"
+        },
+        "storageAccountName": {
+            "value": "phoenix2020"
+        },
+        "storageContainerName": {
+            "value": "girrafe3030-container"
+        },
+        "clusterName": {
+            "value": "girrafe3030"
+        },
+        "clusterLoginUserName": {
+            "value": "hippo"
+        },
+        "clusterLoginPassword": {
+            "value": "BigData1239@"
+        },
+        "location": {
+            "value": "westus2"
+        },
+        "zookeeperVMSize": {
+            "value": "Standard_E4_V3"
+        },
+        "headNodeVMSize": {
+            "value": "Standard_D12_V2"
+        },
+        "workerNodeVMSize": {
+            "value": "Standard_DS12_V2"
+        },
+        "clusterWorkerNodeCount": {
+            "value": 5
+        },
+        "clusterKind": {
+            "value": "HBASE"
+        },
+        "clusterVersion": {
+            "value": "4.0"
+        },
+        "sshUserName": {
+            "value": "bulldog"
+        },
+        "sshPassword": {
+            "value": "BigData1239@"
+        },
+        "minTlsVersionNumber": {
+            "value": "1.2"
+        },
+        "accountType": {
+            "value": "Premium_LRS"
+        },
+        "kind": {
+            "value": "BlockBlobStorage"
+        },
+        "minimumTlsVersion": {
+            "value": "TLS1_2"
+        },
+        "supportsHttpsTrafficOnly": {
+            "value": true
+        },
+        "allowBlobPublicAccess": {
+            "value": true
+        },
+        "networkAclsBypass": {
+            "value": "AzureServices"
+        },
+        "networkAclsDefaultAction": {
+            "value": "Allow"
+        }
+    }
+}
